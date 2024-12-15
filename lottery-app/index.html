@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>1～3等くじ引き</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>1～3等くじ引き</h1>
+
+  <div class="config">
+    <h2>各等の当選人数を設定</h2>
+    <div>
+      <label for="firstCount">1等人数:</label>
+      <input type="number" id="firstCount" value="1" min="0">
+    </div>
+    <div>
+      <label for="secondCount">2等人数:</label>
+      <input type="number" id="secondCount" value="3" min="0">
+    </div>
+    <div>
+      <label for="thirdCount">3等人数:</label>
+      <input type="number" id="thirdCount" value="5" min="0">
+    </div>
+    <button id="initButton">設定を反映</button>
+  </div>
+
+  <div class="status">
+    <h2>残り当選人数</h2>
+    <p>1等: <span id="remainFirstContainer"></span></p>
+    <p>2等: <span id="remainSecondContainer"></span></p>
+    <p>3等: <span id="remainThirdContainer"></span></p>
+  </div>
+
+  <div class="controls">
+    <h2>抽選</h2>
+    <button id="drawButton" disabled>抽選する</button>
+    <div id="result"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

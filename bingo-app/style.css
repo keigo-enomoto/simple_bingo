@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+:root {
+  --font-family: 'Poppins', sans-serif;
+  --color-bg-start: #e0f5dc;
+  --color-bg-end: #c5ebbb;
+  --color-text: #333;
+  --color-primary: #39b54a; /* 緑系 */
+  --color-primary-dark: #2e8f3a;
+  --color-accent: #f05454;
+  --color-white: #fff;
+  --border-radius: 12px;
+  --spacing: 20px;
+  --transition: 0.3s ease;
+}
+
+body {
+  font-family: var(--font-family);
+  margin: 0;
+  padding: var(--spacing);
+  background: linear-gradient(to bottom right, var(--color-bg-start), var(--color-bg-end));
+  color: var(--color-text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.app-container {
+  background: var(--color-white);
+  border-radius: var(--border-radius);
+  padding: var(--spacing);
+  max-width: 800px; /* 横長になるように幅を拡大 */
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+h1, h2 {
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: var(--spacing);
+}
+
+h1 {
+  font-size: 1.8rem;
+  margin-top: 0;
+  color: var(--color-primary-dark);
+}
+
+h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-primary-dark);
+}
+
+.inputs-line, .manual-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing);
+  margin-bottom: var(--spacing);
+}
+
+label {
+  font-weight: 500;
+}
+
+input[type="number"] {
+  width: 70px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: var(--border-radius);
+  font-size: 1em;
+  text-align: center;
+  font-family: var(--font-family);
+  outline: none;
+}
+
+button {
+  padding: 10px 20px;
+  background: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 500;
+  transition: background var(--transition);
+}
+
+button:hover {
+  background: var(--color-primary-dark);
+}
+
+#currentNumber {
+  font-size: 4em;
+  color: var(--color-accent);
+  text-align: center;
+  margin: var(--spacing) 0;
+  min-height: 1em;
+  font-weight: 700;
+}
+
+#pastNumbers {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+#pastNumbers li {
+  display: inline-block;
+  background-color: var(--color-primary);
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  margin: 10px;
+  border-radius: 50%;
+  font-size: 1.5em;
+  font-weight: 600;
+  user-select: none;
+}
+
+/* ルーレット中アニメーション */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+.roulette {
+  animation: pulse 0.1s ease;
+}
+
+/* 当選決定時の拡大アニメーション */
+@keyframes final-scale {
+  0% { transform: scale(1); }
+  20% { transform: scale(1.5); }
+  40% { transform: scale(1.2); }
+  60% { transform: scale(1.4); }
+  80% { transform: scale(1.3); }
+  100% { transform: scale(1); }
+}
+.final {
+  animation: final-scale 0.8s ease;
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>BINGOアプリ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <h1>BINGOアプリ</h1>
+
+    <div class="inputs-line">
+      <label for="minNumber">最小値</label>
+      <input type="number" id="minNumber" value="1">
+      <label for="maxNumber">最大値</label>
+      <input type="number" id="maxNumber" value="75">
+      <button id="generateButton">抽選する</button>
+    </div>
+
+    <h2>当選番号の追加</h2>
+    <div class="manual-input">
+      <input type="number" id="manualNumber" placeholder="番号を入力">
+      <button id="addManualButton">当選番号の追加</button>
+    </div>
+
+    <h2>当選番号</h2>
+    <div id="currentNumber">--</div>
+
+    <h2>過去の当選番号</h2>
+    <ul id="pastNumbers"></ul>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
