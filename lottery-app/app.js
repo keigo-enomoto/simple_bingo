@@ -48,9 +48,16 @@ document.getElementById('initButton').addEventListener('click', () => {
 document.getElementById('drawButton').addEventListener('click', () => {
   // 残っている等を配列に格納
   let candidates = [];
-  if (remainFirst > 0) candidates.push('1等');
-  if (remainSecond > 0) candidates.push('2等');
-  if (remainThird > 0) candidates.push('3等');
+
+  // 各等の当選確率は1/3
+  // if (remainFirst > 0) candidates.push('1等');
+  // if (remainSecond > 0) candidates.push('2等');
+  // if (remainThird > 0) candidates.push('3等');
+
+  // 各等の残りの当選数に応じた確率
+  for( let i=0; i<remainFirst; i++) candidates.push('1等');
+  for( let i=0; i<remainSecond; i++) candidates.push('2等');
+  for( let i=0; i<remainThird; i++) candidates.push('3等');
 
   const resultElement = document.getElementById('result');
   resultElement.textContent = ''; // 前回結果をクリア
